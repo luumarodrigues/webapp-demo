@@ -1,4 +1,4 @@
-name: Demo exemplo WebApp
+name: Demo Exemplo WebApp
 
 on: workflow_dispatch
 
