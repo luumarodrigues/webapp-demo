@@ -83,5 +83,5 @@ jobs:
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: Demo-githubactions02
+        app-name: Demo-githubactions2
         package: ${{ env.AZURE_WEBAPP }}/output
