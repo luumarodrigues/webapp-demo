@@ -65,7 +65,7 @@ jobs:
         deploymentMode: Incremental
 
   deploy:
-    needs: build
+    needs: deploy-IaC
     name: Deploy Web App
     runs-on: ubuntu-latest
     steps:
