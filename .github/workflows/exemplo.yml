@@ -64,7 +64,26 @@ jobs:
         template: Infraestrutura/deploy.json
         deploymentMode: Incremental
 
-    
-    
+  Deploy:
+    needs: Deploy-Iac
+    name: Deploy Web App
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Artifact
+      uses: actions/download-artifact@v2.0.10
+      with:
+        name: artifact
+        path: '${{ env.AZURE_WEBAPP }}/output'
+
+    - name: Azure Login
+      uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure WebApp
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: Demo-GithubActions1
+        package: '${{ env.AZURE_WEBAPP }}/output'
     
 
