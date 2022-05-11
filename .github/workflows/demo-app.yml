@@ -88,13 +88,3 @@ jobs:
         with:
           app-name: Demo-githubactions
           package: ${{ env.AZURE_WEBAPP }}/output
-    
-    
-    
-    
-    
-    
-    
-    
-      
-    
